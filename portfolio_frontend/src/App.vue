@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import SkillsSection from './components/SkillsSection.vue'
 
 const isMenuOpen = ref(false)
 const activeSection = ref('home')
@@ -100,23 +101,8 @@ onMounted(() => {
         </div>
       </section>
 
-      <!-- Skills -->
-      <section id="skills" data-section class="section surface-card">
-        <header class="section-header">
-          <h2>Skills</h2>
-          <p>Core technologies and tools I use daily.</p>
-        </header>
-        <div class="chips">
-          <span class="chip">Vue 3</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">Pinia</span>
-          <span class="chip">Vite</span>
-          <span class="chip">Component Design</span>
-          <span class="chip">Accessibility</span>
-          <span class="chip">Responsive UI</span>
-          <span class="chip">Testing</span>
-        </div>
-      </section>
+      <!-- Skills (modern component) -->
+      <SkillsSection class="section" />
 
       <!-- Projects -->
       <section id="projects" data-section class="section surface-card">
@@ -305,7 +291,8 @@ onMounted(() => {
 
 /* Layout sections */
 main { max-width: 1100px; margin: 0 auto; padding: 1rem; }
-.section { margin-top: 2rem; border-radius: 16px; padding: 2rem; }
+.section { margin-top: 2rem; border-radius: 16px; padding: 2rem; transition: box-shadow .2s ease, transform .2s ease; }
+.section:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(17,24,39,0.08); }
 .surface-card {
   position: relative;
   background: var(--surface);
