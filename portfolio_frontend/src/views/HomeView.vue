@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+// HomeView remains as router's default but main content is now in App.vue sections.
+// This view intentionally stays minimal.
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <main style="display:none"></main>
 </template>
